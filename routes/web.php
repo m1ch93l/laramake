@@ -32,15 +32,18 @@ use Illuminate\Support\Facades\Route;
 // default view
 Route::get('/', [StudentController::class, 'index']);
 
+// direct to login
+Route::get('/login', [UserController::class, 'login']);
+
 // request id of user
 // Route::get('/user/{id}/{group}', function($id, $group){
 //     return response($id.'-'.$group, 200);
 // });
 
 // routes to controller
-Route::get('/users', [UserController::class, 'index']);
-//call $id from controller, middleware auth means can't access spec page
-Route::get('/user/{id}', [UserController::class, 'show']);
+// Route::get('/users', [UserController::class, 'index']);
+// //call $id from controller, middleware auth means can't access spec page
+// Route::get('/user/{id}', [UserController::class, 'show']);
 
-// students routes
-Route::get('/students', [StudentController::class, 'index']);
+// // students routes
+// Route::get('/students', [StudentController::class, 'index']);
